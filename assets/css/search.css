@@ -28,8 +28,14 @@
 .ride-cost .card img{
 	height: 70px;
 	width: 70px;
-	margin-left: 20px;
 	margin-top: 10px;
+}
+.ride-cost .card .text h3{
+	font-size: 12px;
+}
+.ride-cost .card .text p{
+	font-size: 10px;
+	margin-top: -1px;
 }
 
 
@@ -38,7 +44,7 @@
 		height: 250px;
 	}
 	.ride-cost h3{
-		font-size: 16px;
+		font-size: 18px;
 	}
 	.ride-cost p{
 		font-size: 15px;
@@ -50,7 +56,7 @@
 		margin-bottom: 20px;
 	}
 	.ride-cost .card img{
-	height: 50px;
-	width: 50px;
-}
+		height: 50px;
+		width: 50px;
+	}
 }
