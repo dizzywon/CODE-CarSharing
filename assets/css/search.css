@@ -1,0 +1,9 @@
+#intro {
+    background: lightgrey;
+    height: 300px;
+}
+@media(max-width: 767px){
+	#intro{
+		height: 300px;
+	}
+}

@@ -1,0 +1,154 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html,
+body,
+#intro,
+.view {
+  height: 100vh; }
+
+html,
+body,
+div,
+span,
+a,
+h1,
+h2,
+h3, 
+h4,
+h5,
+h6,
+p ,
+ul{
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility; 
+}
+ul{
+	list-style-type: none;
+	
+}
+a{
+    text-decoration: none;
+    
+}
+
+.navbar{
+    box-shadow: none !important;
+}
+.navbar-brand{
+        font-weight: 400;
+    }
+.top-nav-collapse {
+    background: #333 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+    padding: 15px !important;
+}
+.nav-link {
+	font-size: 15px !important;
+}
+#intro{
+	background: url('../../assets/img/downtown.jpg');
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	height: 500px;
+	width: 100%;
+}
+.view h3{
+	font-weight: 600;
+	font-size: 50px;
+}
+.view input[type="text"]{
+    padding: 20px;
+    font-size: 15px;
+    height: 45px;
+    width: 60%;
+    outline: none !important;
+    border: none;
+    margin-bottom: 20px;
+  	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.65);
+}
+.view input[type="text"]::placeholder{
+	font-size:13px;
+}
+.view .button{
+	background: #5be060;
+    color: #ffffff;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-size:16px;
+    height:40px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.view .button a{
+	color: #ffffff;
+}
+
+.section{
+	padding: 50px 0;
+}
+.section .text{
+	margin-top: 20px;
+}
+.section h3{
+	font-weight: 500;
+	font-size: 30px;
+
+}
+.section .fa-check-circle{
+	color: #b73acd;
+	font-size: 30px;
+}
+
+
+
+@media (max-width: 767px){
+	#intro{
+		height: 400px;
+	}
+	.view h3{
+		font-size: 35px;
+	}
+	.view input[type="text"]{
+		width: 90%;
+	}
+	/*section*/
+
+	.section h3{
+		font-size: 25px;
+
+	}
+	.section .col-md-4{
+		width: 90%;
+		margin-bottom: 20px;
+	}
+	.section .text{
+		position: relative;
+		top: -30px;
+		left: 40px;
+		margin-top: 0;
+	}
+	.section .text h3{
+		font-size: 20px;
+	}
+	.section .text p{
+		font-size: 15px;
+	}
+}
