@@ -2,8 +2,55 @@
     background: lightgrey;
     height: 300px;
 }
+.container{
+	margin: 0 auto;
+	width: 90%;
+}
+.ride-cost{
+	padding: 40px 0;
+}
+.ride-cost h3{
+	font-weight: 600;
+	font-size: 25px;
+}
+.ride-cost p{
+	margin-top: 10px;
+	color: grey;
+	font-size: 20px;
+}
+.ride-cost .card{
+	margin: 0;
+	height: 120px;
+	width: 30%;
+	background: #fff;
+	margin-left: 20px;
+}
+.ride-cost .card img{
+	height: 70px;
+	width: 70px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+
 @media(max-width: 767px){
 	#intro{
-		height: 300px;
+		height: 250px;
 	}
+	.ride-cost h3{
+		font-size: 16px;
+	}
+	.ride-cost p{
+		font-size: 15px;
+	}
+	.ride-cost .card{
+		height: 100px;
+		margin: 0;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.ride-cost .card img{
+	height: 50px;
+	width: 50px;
+}
 }
