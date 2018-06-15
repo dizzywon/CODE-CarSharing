@@ -2,10 +2,7 @@
     background: lightgrey;
     height: 300px;
 }
-.container{
-	margin: 0 auto;
-	width: 90%;
-}
+
 .ride-cost{
 	padding: 40px 0;
 }
@@ -19,11 +16,8 @@
 	font-size: 20px;
 }
 .ride-cost .card{
-	margin: 0;
 	height: 120px;
-	width: 30%;
-	background: #fff;
-	margin-left: 20px;
+	margin-bottom: 40px;
 }
 .ride-cost .card img{
 	height: 70px;
@@ -36,8 +30,27 @@
 .ride-cost .card .text p{
 	font-size: 10px;
 	margin-top: -1px;
+	color: #000;
 }
-
+.ride-cost .card .text .time{
+	font-size: 20px;
+}
+.ride-cost .card .text b{
+	font-size: 25px;
+}
+.ride-cost .card .text .button{
+	background: #b73acd;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #fff;
+	height: 40px;
+	width: 90px;
+	font-size: 10px;
+}
 
 @media(max-width: 767px){
 	#intro{
@@ -50,13 +63,23 @@
 		font-size: 15px;
 	}
 	.ride-cost .card{
-		height: 100px;
-		margin: 0;
-		width: 100%;
+		height: 120px;
 		margin-bottom: 20px;
 	}
 	.ride-cost .card img{
 		height: 50px;
 		width: 50px;
+	}
+	.ride-cost .card .text .time{
+		font-size: 12px;
+	}
+}
+
+@media(max-width: 990px) and (min-width: 768px){
+	.ride-cost .card .text .time{
+		font-size: 10px;
+	}
+	.ride-cost .card .text .button{
+		margin-left: -5px !important;
 	}
 }
