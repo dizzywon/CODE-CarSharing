@@ -58,15 +58,23 @@ a{
   font-weight:  600;
   border: 2px solid #754bbf;
 }
+.login-body{
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+.card{
+  border: none;
+  box-shadow: none;
+  width: 40% !important;
+  left: 30%;
+  background: #754bbf;
+}
   .login-box{
     width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    color: #754bbf;
     padding: 50px;
   }
+  
   .login-box h1{
     font-size: 35px;
     padding: 0;
@@ -151,10 +159,8 @@ a{
 }
 .login-box{
   width: 100%;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  transform: translate(-50%, -50%);
-  color: white;    
-  padding: 50px;
+}
+.card{
+  width: 100% !important;
+  left: 0;
 }
