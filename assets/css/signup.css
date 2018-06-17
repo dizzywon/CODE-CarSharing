@@ -1,0 +1,184 @@
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html,
+body {
+  height: 100vh; }
+  body{
+    background: #754bbf;
+  }
+
+html,
+body,
+div,
+span,
+a,
+h1,
+h2,
+h3, 
+h4,
+h5,
+h6,
+p ,
+ul{
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility; 
+}
+ul{
+  list-style-type: none;
+  
+}
+a{
+    text-decoration: none;
+    
+}
+
+/*LOGIN*/
+.navbar-brand{
+  font-weight: 500;
+  margin-left: 45%;
+}
+.top-nav-collapse {
+    background: #fff !important;
+}
+.navbar:not(.top-nav-collapse) {
+    background:  #fff !important;
+    padding: 15px !important;
+}
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-item .nav-link{
+  color: #754bbf !important;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover{
+  color: #754bbf;
+}
+.nav-item{
+  font-weight:  600;
+  border: 2px solid #754bbf;
+}
+.navbar .navbar-toggler{
+  background: #754bbf !important;
+}
+
+.login-body{
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+.card{
+  border: none;
+  box-shadow: none;
+  width: 40% !important;
+  left: 30%;
+  background: #754bbf;
+}
+
+  .login-box{
+    width: 400px;
+    color: #754bbf;
+    padding: 50px;
+  }
+  .login-box h1{
+    font-size: 35px;
+    padding: 0;
+    color:  #fff;
+    text-align: center;
+
+  }
+  .login-box .form-group{
+    position: relative;
+    margin-top: 30px;
+  }
+  .login-box .form-group input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #66b5d9;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .form-group #strength{
+    position: absolute;
+    top: -3px;
+    right: 5%;
+  }
+  .login-box .form-group label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: 400;
+    padding:  10px 0;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .login-box .form-group input:focus ~ label,
+  .login-box .form-group input:valid ~ label {
+    top: -26px;
+    left: 0;
+    color: #66b5d9;
+    font-size: 13px;
+  }
+
+  .btn{
+    margin:  auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    background: #66b5d9;
+    border:  none;
+    color: #fff;
+    padding: 5px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none;
+  }
+  .password-forget{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+.footer{
+  background: #754bbf;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/*MOBILE*/
+
+@media (max-width: 768px){
+  .navbar-brand{
+  margin: 0;
+}
+
+.nav-item{
+  border: none;
+}
+.nav-link{
+  text-align: center;
+}
+.login-box{
+  width: 100%;
+}
+.card{
+  width: 100% !important;
+  left: 0;
+}
+
