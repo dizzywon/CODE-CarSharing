@@ -47,10 +47,10 @@
 				<h1>Login</h1>
 					<!-- registration form -->
 					<button class="btn" type="submit"><i class="fa fa-facebook mr-3"></i>Login with Facebook</button>
-				<form id="register">
+				<form id="register" action="profile.html" method="GET">
 					<!-- email -->
 					<div class="form-group">
-						<input type="type" id="email" name="email" autofocus required />
+						<input type="email" id="email" name="email" autofocus required />
 						<label>Email</label>
 					</div>
 					<div class="form-group">
@@ -59,14 +59,16 @@
 						<span id="strength"></span>
 						<label>Password</label>
 					</div>
-					<button class="btn" type="submit">Login</button>
+					<button class="btn" type="submit"><a href="profile.html">Login</a></button>
 				</form>
 				<a class="password-forget" href="#">Forgot Password?</a>
 			</div>
         </main>
 
 
-		
+		<footer class="footer">
+			&copy; Car Sharing 2018
+		</footer>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

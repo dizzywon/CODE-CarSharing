@@ -35,7 +35,10 @@ a{
     text-decoration: none;
     
 }
-
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fcfcfc;
+}
 
 
 .navbar{
@@ -52,88 +55,45 @@ a{
     z-index: 900;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1) !important;
 }
-#intro {
-    background: lightgrey;
-    height: 300px;
+main .container{
+    margin: 0 auto;
+    width: 85%;
+    padding: 30px 0;
+    margin-top: 50px;
 }
-.view input[type="text"]{
-    padding: 20px;
-    font-size: 15px;
-    height: 45px;
-    width: 60%;
-    outline: none !important;
-    border: none;
+main .row{
+    flex-wrap: wrap;
+}
+
+.available-ride .box,
+.available-ride .card{
+    background: #eee;
+    height: 150px;
+    width: 100%;
+}
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12{
     margin-bottom: 20px;
-  	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.65);
 }
-.view input[type="text"]::placeholder{
-	font-size:13px;
+.card{
+    box-shadow: none;
+    border-radius: 0;
 }
-.view .button{
-	background: #5be060;
-    color: #ffffff;
-    padding-right: 40px;
-    padding-left: 40px;
-    font-size:16px;
-    height:50px;
-    margin-top: 20px;
-    border: none;
-    outline: none;
-    text-align: center;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.view .button a{
-	color: #ffffff;
-}
-.ride-cost{
-	padding: 40px 0;
-}
-.ride-cost h3{
-	font-weight: 600;
-	font-size: 25px;
-}
-.ride-cost p{
-	margin-top: 10px;
-	color: grey;
-	font-size: 20px;
-}
-.ride-cost .card{
-	height: 120px;
-	margin-bottom: 40px;
-}
-.ride-cost .card img{
-	height: 70px;
-	width: 70px;
-	margin-top: 10px;
-}
-.ride-cost .card .text h3{
-	font-size: 12px;
-}
-.ride-cost .card .text p{
-	font-size: 10px;
-	margin-top: -1px;
-	color: #000;
-}
-.ride-cost .card .text .time{
-	font-size: 20px;
-}
-.ride-cost .card .text b{
-	font-size: 25px;
-}
-.ride-cost .card .text .button{
-	background: #754bbf;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	border-radius: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
-	color: #fff;
-	height: 40px;
-	width: 90px;
-	font-size: 10px;
-}
+
+
+
+/* DESKTOP */
+
 @media screen and (min-width: 769px) {
     #sidebar,
     #toggle-btn{
@@ -164,13 +124,18 @@ a{
         color: #1a1a1a;
         font-weight: 600;
     }
-    .dropdown-menu a:hover{
-        color: #d7b04f !important;
+    .dropdown-menu a{
         font-weight: 600 !important;
     }
+    .dropdown-menu a:hover{
+        color: #d7b04f !important;
+    }
 }
-@media(max-width: 768px){
-	.navbar{
+
+
+/* MOBILE */
+@media (max-width: 768px){
+    .navbar{
         position: fixed;
     }
     .navbar #sidebar{
@@ -253,42 +218,7 @@ a{
         top: 10px;
         right: 30px;
     }
-	#intro{
-		height: 250px;
-	}
-	.view .container{
-		margin-top: 50px;
-	}
-	.view h3{
-		font-size: 35px;
-	}
-	.view input[type="text"]{
-		width: 90%;
-	}
-	.ride-cost h3{
-		font-size: 18px;
-	}
-	.ride-cost p{
-		font-size: 15px;
-	}
-	.ride-cost .card{
-		height: 120px;
-		margin-bottom: 20px;
-	}
-	.ride-cost .card img{
-		height: 50px;
-		width: 50px;
-	}
-	.ride-cost .card .text .time{
-		font-size: 12px;
-	}
-}
 
-@media(max-width: 990px) and (min-width: 769px){
-	.ride-cost .card .text .time{
-		font-size: 10px;
-	}
-	.ride-cost .card .text .button{
-		margin-left: -5px !important;
-	}
+    /*MAIN*/
+    
 }

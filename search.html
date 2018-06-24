@@ -15,33 +15,45 @@
 		<!-- Material Design Bootstrap -->
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 
-		<!-- Custom css -->
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <!-- Custom css -->
         <link rel="stylesheet" type="text/css" href="assets/css/search.css">
 
 	</head>
 	<body>
 		<header>
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id=mainNav>
+            <nav class="navbar navbar-expand ">
                 <div class="container">
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand" href="index.html">CAR SHARING</a>
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" href="signUp.html">Sign Up</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" href="login.html">Login</a>
-                            </li>
+                    <div id="sidebar">
+                        <ul>
+                            <img src="assets/img/face1.jpg" class="rounded-circle" alt="First sample avatar image">
+                            <p>JOHN DOE</p>
+                            <li><a href="profile.html">Home</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="search.html">Find A Ride</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="login.html">Log Out</a></li>
                         </ul>
                     </div>
-                    <!-- Collapsible content -->
+                    <div id="toggle-btn" onclick="toggleSidebar(this)">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <a id="home" href="index.html">CAR SHARING</a>
+                    <div class=" span-user text-center">
+                        <p>Welcome, John Doe</p>
+                        <img src="assets/img/face1.jpg" class="rounded-circle" alt="First sample avatar image">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="search.html">Find A Ride</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="login.html">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </nav>
         
@@ -102,7 +114,57 @@
                                     <div class="text text-center mt-1">
                                         <h3><b>N300</b></h3>
                                         <p>per passenger</p>
+                                        <button type="submit" class="button mt-2 mr-3"><a href="payment.html" >Book Now</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card flex-row">
+                                <div class="col-md-4 mt-1">
+                                    <img src="assets/img/face2.jpg" class="rounded-circle" alt="First sample avatar image">
+                                    <div class="text r">
+                                        <h3>Francis Amadi</h3>
+                                        <p>FirstBank PLC</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text text-center mt-2">
+                                        <h3 class="time">6:00PM-8:00PM</h3>
+                                        <p>Isolo <i class="fa fa-arrow-right"></i> Victoria Island</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text text-center mt-1">
+                                        <h3><b>N300</b></h3>
+                                        <p>per passenger</p>
                                         <button type="submit" class="button mt-2 mr-3">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card flex-row">
+                                <div class="col-md-4 mt-1">
+                                    <img src="assets/img/face1.jpg" class="rounded-circle" alt="First sample avatar image">
+                                    <div class="text">
+                                        <h3>Francis Amadi</h3>
+                                        <p>FirstBank PLC</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text text-center mt-2">
+                                        <h3 class="time">6:00PM-8:00PM</h3>
+                                        <p>Isolo <i class="fa fa-arrow-right"></i> Victoria Island</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text text-center mt-1">
+                                        <h3><b>N300</b></h3>
+                                        <p>per passenger</p>
+                                        <button type="submit" class="button  mt-2 mr-3">Book Now</button>
                                     </div>
                                 </div>
                             </div>
@@ -199,5 +261,6 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="assets/js/main.js" type="text/javascript"></script>
 	</body>
 </html>

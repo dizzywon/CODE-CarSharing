@@ -1,0 +1,39 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html,
+body,
+#intro,
+.view {
+  height: 100vh; }
+
+html,
+body,
+div,
+span,
+a,
+h1,
+h2,
+h3, 
+h4,
+h5,
+h6,
+p ,
+ul{
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility; 
+}
+ul{
+	list-style-type: none;
+	
+}
+a{
+    text-decoration: none;
+    
+}
