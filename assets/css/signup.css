@@ -39,6 +39,9 @@ a{
     text-decoration: none;
     
 }
+body{
+  font-family: 'Quicksand', sans-serif;
+}
 
 /*LOGIN*/
 .navbar-brand{

@@ -1,124 +1,109 @@
-var $form = $('#payment-form');
-			$form.find('.subscribe').on('click', payWithStripe);
+(function ($) {
+    $.fn.extend({
+        easyResponsiveTabs: function (options) {
+            //Set the default values, use comma to separate the settings, example:
+            var defaults = {
+                type: 'default', //default, vertical, accordion;
+                width: 'auto',
+                fit: true
+            }
+            //Variables
+            var options = $.extend(defaults, options);            
+            var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
 
-			/* If you're using Stripe for payments */
-			function payWithStripe(e) {
-			    e.preventDefault();
-			    
-			    /* Abort if invalid form data */
-			    if (!validator.form()) {
-			        return;
-			    }
+            //Main function
+            this.each(function () {
+                var $respTabs = $(this);
+                $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
+                $respTabs.css({
+                    'display': 'block',
+                    'width': jwidth
+                });
 
-			    /* Visual feedback */
-			    $form.find('.subscribe').html('Validating <i class="fa fa-spinner fa-pulse"></i>').prop('disabled', true);
+                $respTabs.find('.resp-tabs-container > div').addClass('resp-tab-content');
+                jtab_options();
+                //Properties Function
+                function jtab_options() {
+                    if (jtype == vtabs) {
+                        $respTabs.addClass('resp-vtabs');
+                    }
+                    if (jfit == true) {
+                        $respTabs.css({ width: '100%', margin: '0px' });
+                    }
+                    if (jtype == accord) {
+                        $respTabs.addClass('resp-easy-accordion');
+                        $respTabs.find('.resp-tabs-list').css('display', 'none');
+                    }
+                }
 
-			    var PublishableKey = 'pk_test_6pRNASCoBOKtIshFeQd4XMUh'; // Replace with your API publishable key
-			    Stripe.setPublishableKey(PublishableKey);
-			    
-			    /* Create token */
-			    var expiry = $form.find('[name=cardExpiry]').payment('cardExpiryVal');
-			    var ccData = {
-			        number: $form.find('[name=cardNumber]').val().replace(/\s/g,''),
-			        cvc: $form.find('[name=cardCVC]').val(),
-			        exp_month: expiry.month, 
-			        exp_year: expiry.year
-			    };
-			    
-			    Stripe.card.createToken(ccData, function stripeResponseHandler(status, response) {
-			        if (response.error) {
-			            /* Visual feedback */
-			            $form.find('.subscribe').html('Try again').prop('disabled', false);
-			            /* Show Stripe errors on the form */
-			            $form.find('.payment-errors').text(response.error.message);
-			            $form.find('.payment-errors').closest('.row').show();
-			        } else {
-			            /* Visual feedback */
-			            $form.find('.subscribe').html('Processing <i class="fa fa-spinner fa-pulse"></i>');
-			            /* Hide Stripe errors on the form */
-			            $form.find('.payment-errors').closest('.row').hide();
-			            $form.find('.payment-errors').text("");
-			            // response contains id and card, which contains additional card details            
-			            console.log(response.id);
-			            console.log(response.card);
-			            var token = response.id;
-			            // AJAX - you would send 'token' to your server here.
-			            $.post('/account/stripe_card_token', {
-			                    token: token
-			                })
-			                // Assign handlers immediately after making the request,
-			                .done(function(data, textStatus, jqXHR) {
-			                    $form.find('.subscribe').html('Payment successful <i class="fa fa-check"></i>');
-			                })
-			                .fail(function(jqXHR, textStatus, errorThrown) {
-			                    $form.find('.subscribe').html('There was a problem').removeClass('success').addClass('error');
-			                    /* Show Stripe errors on the form */
-			                    $form.find('.payment-errors').text('Try refreshing the page and trying again.');
-			                    $form.find('.payment-errors').closest('.row').show();
-			                });
-			        }
-			    });
-			}
-			/* Fancy restrictive input formatting via jQuery.payment library*/
-			$('input[name=cardNumber]').payment('formatCardNumber');
-			$('input[name=cardCVC]').payment('formatCardCVC');
-			$('input[name=cardExpiry').payment('formatCardExpiry');
+                //Assigning the h2 markup
+                var $tabItemh2;
+                $respTabs.find('.resp-tab-content').before("<h2 class='resp-accordion' role='tab'><span class='resp-arrow'></span></h2>");
 
-			/* Form validation using Stripe client-side validation helpers */
-			jQuery.validator.addMethod("cardNumber", function(value, element) {
-			    return this.optional(element) || Stripe.card.validateCardNumber(value);
-			}, "Please specify a valid credit card number.");
+                var itemCount = 0;
+                $respTabs.find('.resp-accordion').each(function () {
+                    $tabItemh2 = $(this);
+                    var innertext = $respTabs.find('.resp-tab-item:eq(' + itemCount + ')').text();
+                    $respTabs.find('.resp-accordion:eq(' + itemCount + ')').append(innertext);
+                    $tabItemh2.attr('aria-controls', 'tab_item-' + (itemCount));
+                    itemCount++;
+                });
 
-			jQuery.validator.addMethod("cardExpiry", function(value, element) {    
-			    /* Parsing month/year uses jQuery.payment library */
-			    value = $.payment.cardExpiryVal(value);
-			    return this.optional(element) || Stripe.card.validateExpiry(value.month, value.year);
-			}, "Invalid expiration date.");
+                //Assigning the 'aria-controls' to Tab items
+                var count = 0,
+                    $tabContent;
+                $respTabs.find('.resp-tab-item').each(function () {
+                    $tabItem = $(this);
+                    $tabItem.attr('aria-controls', 'tab_item-' + (count));
+                    $tabItem.attr('role', 'tab');
 
-			jQuery.validator.addMethod("cardCVC", function(value, element) {
-			    return this.optional(element) || Stripe.card.validateCVC(value);
-			}, "Invalid CVC.");
+                    //First active tab                   
+                    $respTabs.find('.resp-tab-item').first().addClass('resp-tab-active');
+                    $respTabs.find('.resp-accordion').first().addClass('resp-tab-active');
+                    $respTabs.find('.resp-tab-content').first().addClass('resp-tab-content-active').attr('style', 'display:block');
 
-			validator = $form.validate({
-			    rules: {
-			        cardNumber: {
-			            required: true,
-			            cardNumber: true            
-			        },
-			        cardExpiry: {
-			            required: true,
-			            cardExpiry: true
-			        },
-			        cardCVC: {
-			            required: true,
-			            cardCVC: true
-			        }
-			    },
-			    highlight: function(element) {
-			        $(element).closest('.form-control').removeClass('success').addClass('error');
-			    },
-			    unhighlight: function(element) {
-			        $(element).closest('.form-control').removeClass('error').addClass('success');
-			    },
-			    errorPlacement: function(error, element) {
-			        $(element).closest('.form-group').append(error);
-			    }
-			});
+                    //Assigning the 'aria-labelledby' attr to tab-content
+                    var tabcount = 0;
+                    $respTabs.find('.resp-tab-content').each(function () {
+                        $tabContent = $(this);
+                        $tabContent.attr('aria-labelledby', 'tab_item-' + (tabcount));
+                        tabcount++;
+                    });
+                    count++;
+                });
 
-			paymentFormReady = function() {
-			    if ($form.find('[name=cardNumber]').hasClass("success") &&
-			        $form.find('[name=cardExpiry]').hasClass("success") &&
-			        $form.find('[name=cardCVC]').val().length > 1) {
-			        return true;
-			    } else {
-			        return false;
-			    }
-			}
+                //Tab Click action function
+                $respTabs.find("[role=tab]").each(function () {
+                    var $currentTab = $(this);
+                    $currentTab.click(function () {
 
-			$form.find('.subscribe').prop('disabled', true);
-			var readyInterval = setInterval(function() {
-			    if (paymentFormReady()) {
-			        $form.find('.subscribe').prop('disabled', false);
-			        clearInterval(readyInterval);
-			    }
-			}, 250);
+                        var $tabAria = $currentTab.attr('aria-controls');
+
+                        if ($currentTab.hasClass('resp-accordion') && $currentTab.hasClass('resp-tab-active')) {
+                            $respTabs.find('.resp-tab-content-active').slideUp('', function () { $(this).addClass('resp-accordion-closed'); });
+                            $currentTab.removeClass('resp-tab-active');
+                            return false;
+                        }
+                        if (!$currentTab.hasClass('resp-tab-active') && $currentTab.hasClass('resp-accordion')) {
+                            $respTabs.find('.resp-tab-active').removeClass('resp-tab-active');
+                            $respTabs.find('.resp-tab-content-active').slideUp().removeClass('resp-tab-content-active resp-accordion-closed');
+                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active');
+
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + ']').slideDown().addClass('resp-tab-content-active');
+                        } else {
+                            $respTabs.find('.resp-tab-active').removeClass('resp-tab-active');
+                            $respTabs.find('.resp-tab-content-active').removeAttr('style').removeClass('resp-tab-content-active').removeClass('resp-accordion-closed');
+                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active');
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + ']').addClass('resp-tab-content-active').attr('style', 'display:block');
+                        }
+                    });
+                    //Window resize function                   
+                    $(window).resize(function () {
+                        $respTabs.find('.resp-accordion-closed').removeAttr('style');
+                    });
+                });
+            });
+        }
+    });
+})(jQuery);
+

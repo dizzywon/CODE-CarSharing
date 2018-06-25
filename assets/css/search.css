@@ -35,7 +35,9 @@ a{
     text-decoration: none;
     
 }
-
+body{
+	font-family: 'Quicksand', sans-serif;
+}
 
 
 .navbar{
@@ -69,7 +71,7 @@ a{
 .view input[type="text"]::placeholder{
 	font-size:13px;
 }
-.view .button{
+.button{
 	background: #5be060;
     color: #ffffff;
     padding-right: 40px;
@@ -83,7 +85,7 @@ a{
     border-radius: 30px;
     cursor: pointer;
 }
-.view .button a{
+.button a{
 	color: #ffffff;
 }
 .ride-cost{
