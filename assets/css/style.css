@@ -41,7 +41,12 @@ body{
 	font-family: 'Quicksand', sans-serif;
 }
 
-
+.span4{
+	float: left;
+	margin-left: 10px;
+	display: block;
+	width: 30%;
+}
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
@@ -173,9 +178,51 @@ body{
 	color: #ffffff;
 }
 
-.section{
+section{
 	padding: 50px 0;
 }
+.page-section .container{
+		margin: 0 auto;
+		width: 90%
+	}
+.page-section .row{
+	padding: 50px 0;
+	width: 100%;
+}
+.page-section .heading-title h2,
+.page-section .snippet h3{
+	font-weight: 600;
+}
+.section{
+	background: url('../../assets/img/how-it-works.jpg');
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	height: 300px;
+	width: 100%;
+	color: #fff;
+}
+.section .billboard-wrapper {
+    transition: padding-top 500ms;
+}
+.section .billboard-how-it-works .steps {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 26px;
+    line-height: 1.2em;
+    }
+.steps .step-number {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    opacity: 0.75;
+   }
+   .steps .step-text{
+		font-size: 20px;
+	}
 .section .text{
 	margin-top: 20px;
 }
@@ -256,6 +303,23 @@ body{
 		width: 90%;
 	}
 	/*section*/
+	
+	.span4,
+	.row {
+	    display: block;
+	    float: none;
+	    width: auto;
+	    margin-bottom: 30px;
+	}
+	.steps .step-number{
+		float: left;
+		width: 30px;
+		height: 30px;
+		margin-bottom: 5px;
+	}
+	.steps .step-text{
+		font-size: 20px;
+	}
 
 	.section h3{
 		font-size: 25px;
