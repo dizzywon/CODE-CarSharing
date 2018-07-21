@@ -44,12 +44,7 @@ body{
 	margin: 0 auto;
 	width: 90%
 }
-.span4{
-	float: left;
-	margin-left: 35px;
-	display: block;
-	width: 30%;
-}
+
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
@@ -217,11 +212,12 @@ section{
 	width: 100%;
 	color: #fff;
 }
-.section .billboard-how-it-works .steps {
-    margin-top: 20px;
+.section .billboard-how-it-works {
+    margin-top: 40px;
     color: #fff;
     }
 .steps .step-number {
+	left: 40%;
     width: 70px;
     height: 70px;
     margin-bottom: 20px;
@@ -326,8 +322,10 @@ footer{
 	}
 	.section{
 		height: 600px;
+		background-position: 35%;
 	}
 	.steps .step-number{
+		left: 0;
 		float: left;
 		width: 30px;
 		height: 30px;
@@ -336,6 +334,7 @@ footer{
 	.steps .step-text{
 		text-align: justify;
 		margin-left: 50px;
+	}
 
 	
 }

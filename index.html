@@ -7,13 +7,13 @@
 		<title>Car Sharing</title>
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
 
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
 
 		<!-- Material Design Bootstrap -->
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+		<link href="assets/plugins/mdb/css/mdb.min.css" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
         
@@ -76,16 +76,16 @@
         <main>
             <section class="page-section">
                 <div class="container">
-                    <div class="heading-title text-center">
+                    <div class="col-md-12 heading-title text-center">
                       <h2>
-                        Renting has never been easier
+                        Sharing has never been easier
                       </h2>
                       <p class="lead">
-                        Convenient hourly and daily. Insurance included.
+                        Convenient hourly and daily.
                       </p>
                     </div>
                     <div class="row">
-                      <div class="span4">
+                      <div class="col-md-4">
                         <div class="snippet">
                           <h3>
                             Hassle free
@@ -95,7 +95,7 @@
                           </p>
                         </div>
                       </div>
-                      <div class="span4">
+                      <div class="col-md-4">
                         <div class="snippet">
                           <h3>
                             Unlimited choice
@@ -105,7 +105,7 @@
                           </p>
                         </div>
                       </div>
-                      <div class="span4">
+                      <div class="col-md-4">
                         <div class="snippet">
                           <h3>
                             Insurance included
@@ -118,44 +118,46 @@
                     </div>
                 </div>
             </section>
-        	<section id="how-it-works" class="section">
-                <div class="billboard billboard-how-it-works">
-                    <div class="container">
-                        <div class="billboard-wrapper">
-                          <div class="page-title text-center">
-                            <h1 class="title">
-                              How it works
-                            </h1>
-                          </div>
-                          <div class="steps mt-5">
-                            <div class="row">
-                              <div class="span4">
-                                <div class="step text-center">
-                                  <img src="assets/img/icon_num_1.svg" class="step-number">
-                                  <div class="step-text">
-                                    <h3>Find A Ride</h3>
-                                    <p>Enter your location and where you work, we will link you up with a car</p>
-                                  </div>
-                                </div>
+        	<section id="how-it-works" class="section view">
+                <div class="mask rgba-black-light">
+                    <div class="billboard billboard-how-it-works">
+                        <div class="container">
+                            <div class="billboard-wrapper">
+                              <div class="page-title text-center">
+                                <h1 class="title">
+                                  How it works
+                                </h1>
                               </div>
-                              <div class="span4">
-                                <div class="step text-center">
-                                  <img src="assets/img/icon_num_2.svg" class="step-number">
-                                    <div class="step-text">
-                                        <h3>Select your Ride</h3>
-                                        <p>Select your choice of ride and pay for services. You can also benefit for monthly benefits</p>
+                              <div class="steps mt-5">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <div class="step text-center">
+                                      <img src="assets/img/icon_num_1.svg" class="step-number">
+                                      <div class="step-text">
+                                        <h3>Find A Ride</h3>
+                                        <p>Enter your location and where you work, we will link you up with a car</p>
+                                      </div>
                                     </div>
-                                </div>
-                              </div>
-                              <div class="span4">
-                                <div class="step text-center">
-                                  <img src="assets/img/icon_num_3.svg" class="step-number">
-                                  <div class="step-text">
-                                    <h3>Have a stress free ride</h3>
-                                    <p>Enjoy your commute to work</p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="step text-center">
+                                      <img src="assets/img/icon_num_2.svg" class="step-number">
+                                        <div class="step-text">
+                                            <h3>Select your Ride</h3>
+                                            <p>Select your choice of ride and pay for services. You can also benefit for monthly benefits</p>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="step text-center">
+                                      <img src="assets/img/icon_num_3.svg" class="step-number">
+                                      <div class="step-text">
+                                        <h3>Have a stress free ride</h3>
+                                        <p>Enjoy your commute to work</p>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
                             </div>
                         </div>
                     </div>
@@ -176,9 +178,10 @@
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="assets/plugins/mdb/js/jquery-3.3.1.min.js"></script>
+		<script src="assets/plugins/mdb/js/popper.min.js"></script>
+        <script src="assets/plugins/js/scrolling-nav.js"></script>
+		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/main.js" type="text/javascript"></script>
 	</body>
 </html>
